@@ -15,6 +15,7 @@ switched_rules_by_language(
     go = True,
     grpc = True,
     java = True,
+    python = True,
 )
 
 # Note gapic-generator contains java-specific and common code, that is why it is imported in common

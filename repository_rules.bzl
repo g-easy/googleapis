@@ -93,7 +93,7 @@ def switched_rules_by_language(
         java (bool): Enable Java specific rules. False by default.
         go (bool): Enable Go specific rules. False by default.
         cc (bool): Enable C++ specific rules. False by default. Partially implemented.
-        python (bool): Enable Python-specific rules. False by default. Not implemented yet.
+        python (bool): Enable Python-specific rules. False by default. Partially implemented.
         php (bool): Enable PHP specific rules. False by default. Not implemented yet.
         ruby (bool): Enable Ruby specific rules. False by default. Not implemented yet.
         js (bool): Enable JavaScript specific rules. False by default. Not implemented yet.
@@ -179,6 +179,17 @@ def switched_rules_by_language(
         "@com_google_gapic_generator_cpp//rules_gapic/cpp:cc_gapic.bzl",
     )
 
+    #
+    # Python
+    #
+    rules["py_proto_library"] = _switch(
+        python,
+        "@com_google_protobuf//:protobuf.bzl",
+    )
+
+    #
+    # Install the overrides.
+    #
     rules.update(rules_override)
 
     switched_rules(

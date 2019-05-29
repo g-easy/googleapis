@@ -22,7 +22,6 @@ proto_library(
 proto_library(
     name = "backend_proto",
     srcs = ["backend.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -45,25 +44,21 @@ proto_library(
 proto_library(
     name = "config_change_proto",
     srcs = ["config_change.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
     name = "consumer_proto",
     srcs = ["consumer.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
     name = "context_proto",
     srcs = ["context.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
     name = "control_proto",
     srcs = ["control.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -79,7 +74,6 @@ proto_library(
 proto_library(
     name = "documentation_proto",
     srcs = ["documentation.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -99,7 +93,6 @@ proto_library(
 proto_library(
     name = "http_proto",
     srcs = ["http.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -111,7 +104,6 @@ proto_library(
 proto_library(
     name = "label_proto",
     srcs = ["label.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -214,7 +206,6 @@ proto_library(
 proto_library(
     name = "system_parameter_proto",
     srcs = ["system_parameter.proto"],
-    visibility = ["//visibility:public"],
 )
 
 proto_library(
@@ -523,4 +514,23 @@ cc_proto_library(
 cc_proto_library(
     name = "usage_cc_proto",
     deps = [":usage_proto"],
+)
+
+##############################################################################
+# Python
+##############################################################################
+load("@com_google_googleapis_imports//:imports.bzl", "py_proto_library")
+
+py_proto_library(
+    name = "annotations_py_proto",
+    srcs = ["annotations.proto"],
+    deps = [
+        ":http_py_proto",
+        "@com_google_protobuf//:protobuf_python",
+    ],
+)
+
+py_proto_library(
+    name = "http_py_proto",
+    srcs = ["http.proto"],
 )
