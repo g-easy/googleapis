@@ -547,3 +547,9 @@ py_proto_library(
     name = "http_py_proto",
     srcs = ["http.proto"],
 )
+
+py_proto_library(
+    name = "httpbody_py_proto",
+    srcs = ["httpbody.proto"],
+    deps = ["@com_google_protobuf//:protobuf_python"],
+)
