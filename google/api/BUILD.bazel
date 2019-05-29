@@ -4,6 +4,19 @@ package(default_visibility = ["//visibility:public"])
 ##############################################################################
 # Common
 ##############################################################################
+filegroup(
+    name = "api_httpbody_protos_src",
+    srcs = ["httpbody.proto"],
+)
+
+filegroup(
+    name = "http_api_protos_src",
+    srcs = [
+        "annotations.proto",
+        "http.proto",
+    ],
+)
+
 proto_library(
     name = "annotations_proto",
     srcs = ["annotations.proto"],
