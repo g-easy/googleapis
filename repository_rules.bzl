@@ -16,7 +16,7 @@ load("{file_label}", _{rule_name} = "{rule_name}")
     elabled_rule_scrip_alias = """
 {rule_name} = _{rule_name}
 """
-    load_rules = []  # load() must go before everythin else in .bzl files since Bazel 0.25.0
+    load_rules = []  # load() must go before everything else in .bzl files since Bazel 0.25.0
     rules = []
 
     for rule_name, value in ctx.attr.rules.items():
@@ -184,7 +184,7 @@ def switched_rules_by_language(
     #
     rules["py_proto_library"] = _switch(
         python,
-        "@com_google_protobuf//:protobuf.bzl",
+        "@com_github_grpc_grpc//bazel:python_rules.bzl",
     )
 
     #
