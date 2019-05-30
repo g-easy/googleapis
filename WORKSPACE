@@ -149,7 +149,7 @@ http_archive(
     urls = ["https://github.com/bazelbuild/rules_python/archive/8b5d0683a7d878b28fffe464779c8a53659fc645.tar.gz"],
 )
 
-load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
+load("@io_bazel_rules_python//python:pip.bzl", "pip_import")
 
 pip_import(
     name = "grpc_python_dependencies",
