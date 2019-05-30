@@ -93,17 +93,18 @@ load("@com_google_googleapis_imports//:imports.bzl", "py_proto_library")
 
 py_proto_library(
     name = "code_py_proto",
-    srcs = ["code.proto"],
+    deps = [":code_proto"],
+    proto_only = True,
 )
 
 py_proto_library(
     name = "error_details_py_proto",
-    srcs = ["error_details.proto"],
-    deps = ["@com_google_protobuf//:protobuf_python"],
+    deps = [":error_details_proto"],
+    proto_only = True,
 )
 
 py_proto_library(
     name = "status_py_proto",
-    srcs = ["status.proto"],
-    deps = ["@com_google_protobuf//:protobuf_python"],
+    deps = [":status_proto"],
+    proto_only = True,
 )
