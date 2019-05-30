@@ -158,3 +158,9 @@ pip_import(
 load("@com_github_grpc_grpc//bazel:grpc_python_deps.bzl", "grpc_python_deps")
 
 grpc_python_deps()
+
+# Doesn't help.
+bind(
+    name = "grpc_python_plugin",
+    actual = "@com_github_grpc_grpc//:grpc_python_plugin",
+)

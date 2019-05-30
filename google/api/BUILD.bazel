@@ -536,20 +536,16 @@ load("@com_google_googleapis_imports//:imports.bzl", "py_proto_library")
 
 py_proto_library(
     name = "annotations_py_proto",
-    srcs = ["annotations.proto"],
-    deps = [
-        ":http_py_proto",
-        "@com_google_protobuf//:protobuf_python",
-    ],
+    deps = [":annotations_proto"],
 )
 
-py_proto_library(
-    name = "http_py_proto",
-    srcs = ["http.proto"],
-)
-
-py_proto_library(
-    name = "httpbody_py_proto",
-    srcs = ["httpbody.proto"],
-    deps = ["@com_google_protobuf//:protobuf_python"],
-)
+#py_proto_library(
+#    name = "http_py_proto",
+#    srcs = ["http.proto"],
+#)
+#
+#py_proto_library(
+#    name = "httpbody_py_proto",
+#    srcs = ["httpbody.proto"],
+#    deps = ["@com_google_protobuf//:protobuf_python"],
+#)
